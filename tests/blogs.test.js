@@ -24,7 +24,7 @@ afterEach(async () => {
 
 describe('When logged in', () => {
   beforeEach(async () => {
-    await page.login('localhost:3000/blogs');
+    await page.login('http://localhost:3000/blogs');
     await page.click('.fixed-action-btn a.btn-floating');
   });
 
