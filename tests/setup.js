@@ -10,3 +10,13 @@ mongoose.connect(keys.mongoURI, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 });
+
+beforeAll((done) => {
+  done();
+});
+
+afterAll(async (done) => {
+  // Closing the DB connection allows Jest to exit successfully.
+  await mongoose.connection.close();
+  done();
+});
