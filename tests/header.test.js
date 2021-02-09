@@ -2,6 +2,16 @@ const Page = require('./helpers/page');
 
 let page;
 
+beforeAll((done) => {
+  done();
+});
+
+afterAll((done) => {
+  // Closing the DB connection allows Jest to exit successfully.
+  mongoose.connection.close();
+  done();
+});
+
 beforeEach(async () => {
   page = await Page.build();
   await page.goto('http://localhost:3000');
