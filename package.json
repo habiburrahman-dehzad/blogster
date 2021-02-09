@@ -1,0 +1,42 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "The server side Node + Express web application",
+  "main": "index.js",
+  "engines": {
+    "node": "15.x",
+    "yarn": "1.x"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "yarn --cwd ./client/ start",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn --cwd ./client/ install && yarn --cwd ./client/ build",
+    "test": "jest --detectOpenHandles"
+  },
+  "author": "Habiburrahman",
+  "license": "MIT",
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./tests/setup.js"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "jest": "26.6.0",
+    "lodash": "^4.17.20",
+    "migrate-mongoose": "^4.0.0",
+    "mongoose": "^5.11.9",
+    "nodemon": "^2.0.6",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "path-parser": "^6.1.0",
+    "puppeteer": "^5.5.0",
+    "redis": "^3.0.2",
+    "uuid": "^8.3.2"
+  }
+}
