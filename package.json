@@ -14,7 +14,7 @@
     "dev": "concurrently \"yarn server\" \"yarn client\"",
     "heroku-postbuild": "YARN_PRODUCTION=false yarn --cwd ./client/ install && yarn --cwd ./client/ build",
     "build": "YARN_PRODUCTION=false yarn --cwd ./client/ install && yarn --cwd ./client/ build",
-    "test": "jest --detectOpenHandles"
+    "test": "jest"
   },
   "author": "Habiburrahman",
   "license": "MIT",
