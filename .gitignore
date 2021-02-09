@@ -23,6 +23,7 @@ build/
 
 // confidential data
 dev.js
+ci.js
 
 npm-debug.log*
 yarn-debug.log*
