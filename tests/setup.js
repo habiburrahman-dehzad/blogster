@@ -16,6 +16,7 @@ beforeAll((done) => {
 });
 
 afterAll(async (done) => {
+  console.log('Closing the mongoose connection...');
   // Closing the DB connection allows Jest to exit successfully.
   await mongoose.connection.close();
   done();
